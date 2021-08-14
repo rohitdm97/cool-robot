@@ -23,21 +23,38 @@ public class GooglePathResponse {
     @NoArgsConstructor
     public static class Leg {
         private Distance distance;
-        @JsonProperty("start_location")
         private Point startLocation;
-        @JsonProperty("end_location")
         private Point endLocation;
         private List<Step> steps;
+
+
+        @JsonProperty("start_location")
+        public void setStartLocation(GooglePoint startLocation) {
+            this.startLocation = startLocation.toCorePoint();
+        }
+
+        @JsonProperty("end_location")
+        public void setEndLocation(GooglePoint endLocation) {
+            this.endLocation = endLocation.toCorePoint();
+        }
     }
 
     @Data
     @NoArgsConstructor
     public static class Step {
         private Distance distance;
-        @JsonProperty("start_location")
         private Point startLocation;
-        @JsonProperty("end_location")
         private Point endLocation;
+
+        @JsonProperty("start_location")
+        public void setStartLocation(GooglePoint startLocation) {
+            this.startLocation = startLocation.toCorePoint();
+        }
+
+        @JsonProperty("end_location")
+        public void setEndLocation(GooglePoint endLocation) {
+            this.endLocation = endLocation.toCorePoint();
+        }
     }
 
     @Data
