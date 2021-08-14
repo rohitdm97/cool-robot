@@ -45,6 +45,7 @@ public class GooglePathResponse {
         private Distance distance;
         private Point startLocation;
         private Point endLocation;
+        private PolyLine polyline;
 
         @JsonProperty("start_location")
         public void setStartLocation(GooglePoint startLocation) {
@@ -62,5 +63,11 @@ public class GooglePathResponse {
     public static class Distance {
         @JsonProperty("value")
         private int meters;
+    }
+
+    @Data
+    @NoArgsConstructor
+    public static class PolyLine {
+        private String points;
     }
 }

@@ -15,6 +15,12 @@
         <version>2.4.0</version>
     </parent>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/io.leonard/google-polyline-codec -->
+        <dependency>
+            <groupId>io.leonard</groupId>
+            <artifactId>google-polyline-codec</artifactId>
+            <version>0.0.2</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>

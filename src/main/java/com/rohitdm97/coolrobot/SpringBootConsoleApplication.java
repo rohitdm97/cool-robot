@@ -28,6 +28,5 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
         Point origin = Point.of(12.93175, 77.62872);
         Point destination = Point.of(12.92662, 77.63696);
         Path path = equiPathFinder.findPath(origin, destination);
-        log.info("The path is \n {}", path);
     }
 }

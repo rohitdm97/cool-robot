@@ -1,5 +1,6 @@
 package com.rohitdm97.coolrobot.path;
 
+import io.leonard.Position;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.With;
@@ -13,6 +14,12 @@ public class Point {
 
     @Override
     public String toString() {
-        return lat + "," + lng;
+        // for https://mobisoftinfotech.com/tools/plot-multiple-points-on-map/
+        return lat + "," + lng + ",";
     }
+
+    public static Point from(Position position) {
+        return Point.of(position.getLatitude(), position.getLongitude());
+    }
+
 }
