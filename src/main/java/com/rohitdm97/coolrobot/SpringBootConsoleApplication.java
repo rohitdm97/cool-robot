@@ -1,18 +1,14 @@
 package com.rohitdm97.coolrobot;
 
-import lombok.Setter;
-import lombok.extern.log4j.Log4j2;
+import com.rohitdm97.coolrobot.external.distance.PathFinderService;
+import com.rohitdm97.coolrobot.path.Path;
+import com.rohitdm97.coolrobot.path.Point;
+import com.rohitdm97.coolrobot.services.EquiPathFinder;
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.beans.factory.annotation.Autowired;
-import com.rohitdm97.coolrobot.path.Point;
-import com.rohitdm97.coolrobot.external.distance.*;
-
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.client.RestTemplate;
 
 
 @Log4j2
@@ -25,9 +21,13 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
     }
 
     private final PathFinderService pathFinderService;
+    private final EquiPathFinder equiPathFinder;
 
     @Override
     public void run(String... args) {
-        pathFinderService.findPath(Point.of(12.93175, 77.62872), Point.of(12.92662, 77.63696));
+        Point origin = Point.of(12.93175, 77.62872);
+        Point destination = Point.of(12.92662, 77.63696);
+        Path path = equiPathFinder.findPath(origin, destination);
+        log.info("The path is \n {}", path);
     }
 }

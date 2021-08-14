@@ -1,7 +1,7 @@
 package com.rohitdm97.coolrobot.path;
 
-import lombok.Getter;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.With;
 
 @Getter
@@ -10,4 +10,9 @@ import lombok.With;
 public class Point {
     private final double lat;
     private final double lng;
+
+    @Override
+    public String toString() {
+        return lat + "," + lng;
+    }
 }

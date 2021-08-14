@@ -2,26 +2,26 @@ package com.rohitdm97.coolrobot.external.distance;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.rohitdm97.coolrobot.path.Point;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
 public class GooglePathResponse {
 
     private List<Route> routes;
 
     @Data
-    public class Route {
+    @NoArgsConstructor
+    public static class Route {
         private List<Leg> legs;
 
     }
 
     @Data
-    public class Leg {
+    @NoArgsConstructor
+    public static class Leg {
         private Distance distance;
         @JsonProperty("start_location")
         private Point startLocation;
@@ -31,7 +31,8 @@ public class GooglePathResponse {
     }
 
     @Data
-    public class Step {
+    @NoArgsConstructor
+    public static class Step {
         private Distance distance;
         @JsonProperty("start_location")
         private Point startLocation;
@@ -40,7 +41,8 @@ public class GooglePathResponse {
     }
 
     @Data
-    public class Distance {
+    @NoArgsConstructor
+    public static class Distance {
         @JsonProperty("value")
         private int meters;
     }
