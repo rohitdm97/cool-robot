@@ -6,7 +6,7 @@ This is a simple Command Line Application That Plots the Path between two differ
 E.g. Using Points [12.93175, 77.62872] and [12.92662, 77.63696]
 Note: The last step might be shorter than 50 m
 
-![Could Not Find Path Image](example.png "Plot of Path at 50 m step")
+![Could Not Find Path Image](example.PNG "Plot of Path at 50 m step")
 
 Assumptions:
 1. Step Size (50 m) is constant
