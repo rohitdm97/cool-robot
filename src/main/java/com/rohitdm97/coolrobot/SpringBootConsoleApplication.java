@@ -1,5 +1,6 @@
 package com.rohitdm97.coolrobot;
 
+import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
@@ -19,22 +20,14 @@ import org.springframework.web.client.RestTemplate;
 @AllArgsConstructor
 public class SpringBootConsoleApplication implements CommandLineRunner {
 
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(SpringBootConsoleApplication.class, args);
     }
 
-    private PathFinderService pathFinderService;
-    private PlaceFinderService placeFinderService;
+    private final PathFinderService pathFinderService;
 
     @Override
     public void run(String... args) {
-        placeFinderService.convert(Point.of(12.93175, 77.62872));
-        placeFinderService.convert(Point.of(12.92662, 77.63696));
- //       pathFinderService.findPath();
+        pathFinderService.findPath(Point.of(12.93175, 77.62872), Point.of(12.92662, 77.63696));
     }
 }
