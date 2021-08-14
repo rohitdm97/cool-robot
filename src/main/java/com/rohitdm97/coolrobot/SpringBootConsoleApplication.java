@@ -1,27 +1,27 @@
 package com.rohitdm97.coolrobot;
 
-import lombok.Log4j2;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Log4j2
 @SpringBootApplication
-public class SpringBootConsoleApplication 
-  implements CommandLineRunner {
+public class SpringBootConsoleApplication implements CommandLineRunner {
 
-    private static Logger LOG = LoggerFactory
-      .getLogger(SpringBootConsoleApplication.class);
 
     public static void main(String[] args) {
-        LOG.info("STARTING THE APPLICATION");
+        log.info("STARTING THE APPLICATION");
         SpringApplication.run(SpringBootConsoleApplication.class, args);
-        LOG.info("APPLICATION FINISHED");
+        log.info("APPLICATION FINISHED");
     }
- 
+
     @Override
     public void run(String... args) {
-        LOG.info("EXECUTING : command line runner");
- 
+        log.info("EXECUTING : command line runner");
+
         for (int i = 0; i < args.length; ++i) {
-            LOG.info("args[{}]: {}", i, args[i]);
+            log.info("args[{}]: {}", i, args[i]);
         }
     }
 }
